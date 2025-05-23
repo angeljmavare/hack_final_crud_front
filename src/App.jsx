@@ -32,7 +32,7 @@ function App() {
       return;
     }
 
-    Axios.post("https://3.90.107.7:3000/create", {
+    Axios.post("https://3.90.107.7:3000/hack_final_crud_back/index.js/create", {
       nombre: nombre,
       edad: edad,
       correo: correo,
@@ -66,7 +66,7 @@ function App() {
   }
 
   const update = () => {
-    Axios.put("https://3.90.107.7:3000/update", {
+    Axios.put("https://db-crud-usuarios-final.cj2cywk4i2hh.us-east-1.rds.amazonaws.com:3000/update", {
       id: id,
       nombre: nombre,
       edad: edad,
@@ -103,7 +103,7 @@ function App() {
       cancelButtonText: "Cancelar"
     }).then((result) => {
       if (result.isConfirmed) {
-        Axios.delete(`https://3.90.107.7:3000/delete/${val.id}`).then(() => {
+        Axios.delete(`https://db-crud-usuarios-final.cj2cywk4i2hh.us-east-1.rds.amazonaws.com:3000/delete/${val.id}`).then(() => {
           Swal.fire({
             title: "Usuario Eliminado!",
             html: "<strong>" + val.nombre + "</strong> ha sido eliminado.",
@@ -140,7 +140,7 @@ function App() {
   }
 
   const getUsuarios = () => {
-    Axios.get("https://3.90.107.7:3000/usuarios").then((response) => {
+    Axios.get("https://db-crud-usuarios-final.cj2cywk4i2hh.us-east-1.rds.amazonaws.com:3000/usuarios").then((response) => {
       setUsuarios(response.data);
     });
   }
