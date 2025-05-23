@@ -32,7 +32,7 @@ function App() {
       return;
     }
 
-    Axios.post("http://3.90.107.7:3001/create", {
+    Axios.post("http://3.90.107.7:3000/create", {
       nombre: nombre,
       edad: edad,
       correo: correo,
