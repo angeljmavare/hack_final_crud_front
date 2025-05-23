@@ -32,7 +32,7 @@ function App() {
       return;
     }
 
-    Axios.post("http://localhost:3000/create", {
+    Axios.post("http://localhost:3001/create", {
       nombre: nombre,
       edad: edad,
       correo: correo,
@@ -66,7 +66,7 @@ function App() {
   }
 
   const update = () => {
-    Axios.put("http://localhost:3000/update", {
+    Axios.put("http://localhost:3001/update", {
       id: id,
       nombre: nombre,
       edad: edad,
@@ -103,7 +103,7 @@ function App() {
       cancelButtonText: "Cancelar"
     }).then((result) => {
       if (result.isConfirmed) {
-        Axios.delete(`http://localhost:3000/delete/${val.id}`).then(() => {
+        Axios.delete(`http://localhost:3001/delete/${val.id}`).then(() => {
           Swal.fire({
             title: "Usuario Eliminado!",
             html: "<strong>" + val.nombre + "</strong> ha sido eliminado.",
@@ -140,7 +140,7 @@ function App() {
   }
 
   const getUsuarios = () => {
-    Axios.get("http://localhost:3000/usuarios").then((response) => {
+    Axios.get("http://localhost:3001/usuarios").then((response) => {
       setUsuarios(response.data);
     });
   }
